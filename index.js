@@ -1,5 +1,5 @@
 // Enter your token server url to connect to your project
-// NOTE: your token server must allow requests from 'https://web-platform-9chn6x.stackblitz.io'
+// NOTE: your token server must allow requests from 'https://black-field-03dc56710.3.azurestaticapps.net'
 //const tokenServer = 'http://localhost:5001/auth/authorize';
 
 // Note that your API key must allow requests from
@@ -75,3 +75,15 @@ connectButton.addEventListener('click', () => connect());
 
 const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener('click', () => (window.location = '/'));
+
+// **Cambio sugerido**
+// Añadir la siguiente línea para utilizar el modo `no-cors`
+
+async function connect() {
+  // ...
+  const jwt = await fetch('https://dh.az.soulmachines.cloud/api/jwt', {
+    mode: 'no-cors'
+  });
+
+  // ...
+}
