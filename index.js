@@ -1,5 +1,5 @@
 const apiKey =
-  'eyJzb3VsSWQiOiJkZG5hLWRhbmllbC1hbGFyY29uLS1kaWdpdGFsLWNoaWVmLWV4cGVyaWVuY2UiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5hei5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV9lNmY1ZTA3OS00ODI1LTQ2YjUtYjE5ZC05YjEwYzRjNDUzNjEifQ==';
+  'eyJzb3VsSWQiOiJkZG5hLWRhbmllbC1hbGFyY29uLS1kaWdpdGFsLWNoaWVmLWV4cGVyaWVuY2UiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5hei5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV9lNmY1ZTA3OS00ODI1LTQ2YjUtYjE5ZDkwYmQ1MTM3In0==';
 
 let scene;
 
@@ -46,17 +46,20 @@ connectButton.addEventListener('click', () => connect());
 const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener('click', () => (window.location = '/'));
 
-// Realizar la solicitud en modo 'no-cors'
-fetch('https://dh.az.soulmachines.cloud/api/jwt', {
+// Realizar la solicitud a través de Azure API Management
+fetch('https://am-ecp-llm.azure-api.net/', {
   method: 'GET',
-  mode: 'no-cors',
 })
   .then((response) => {
     if (response.ok) {
-      console.log('Solicitud realizada con éxito.');
+      // Procesa la respuesta aquí si es necesario
+      return response.json();
     } else {
       console.error('Error en la solicitud.');
     }
+  })
+  .then((data) => {
+    // Maneja los datos de la respuesta JSON aquí si es necesario
   })
   .catch((error) => {
     console.error('Error al hacer la solicitud:', error);
