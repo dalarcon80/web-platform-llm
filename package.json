@@ -4,9 +4,10 @@
   "description": "Solucion LLM para Asistencia Virtual",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm run build"
   },
-  "author": "Daniel Alarcón Ramirez",
+  "author": "Tu Nombre",
   "license": "MIT",
   "dependencies": {
     "@soulmachines/smwebsdk": "^15.7.0"
