@@ -4,7 +4,7 @@ const apiKey =
 let scene;
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-  // Este código se ejecuta en un navegador
+  // Este código se ejecuta en un navegador.
   /**
    * Start a new connection.
    * Request a JWT from the token server and use it
